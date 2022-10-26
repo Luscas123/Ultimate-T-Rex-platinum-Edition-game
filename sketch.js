@@ -178,7 +178,7 @@ function pontuation(){
  count = count + Math.round(FrameRate()/60);
 
   
- if(count>0 && frameCount/100){
+ if(count>0 && frameCount%100 === 0){
     som_checkPoint.play();
  }
  
