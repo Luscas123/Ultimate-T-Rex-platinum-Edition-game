@@ -175,12 +175,7 @@ function cacto(){
 
 function pontuation(){
   
- count = count + Math.round(frameRate()/60);
-
-  
- if(count>0 && frameCount%100 === 0){
-    som_checkPoint.play();
- }
+ 
  
 }
 
@@ -216,6 +211,12 @@ function jogando(){
   pontuation()
 
   text ("Pontuação:"+count, 500,50);
+  
+  count = count + Math.round(frameRate()/60);
+
+  if(count>0 && frameCount%100 === 0){
+    som_checkPoint.play();
+ }
 
   infinityground();
 
