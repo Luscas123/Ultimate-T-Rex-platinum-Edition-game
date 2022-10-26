@@ -48,7 +48,7 @@ function setup() {
 
   trex.scale = 0.5;
   trex.depth= 2;
-  trex.debug= true;
+  trex.debug= false;
   trex.setCollider ("circle",0,0,40)
   //trex.setCollider ("rectangle",0,0,300,100)
 
@@ -175,12 +175,13 @@ function cacto(){
 
 function pontuation(){
   
-  count= frameCount-aux;
+ count = count + Math.round(FrameRate()/60);
 
   
-  if (count%100===0 && count>0){
+ if(count>0 && frameCount/100){
     som_checkPoint.play();
-  }
+ }
+ 
 }
 
 function inicio(){
