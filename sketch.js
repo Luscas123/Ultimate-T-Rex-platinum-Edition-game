@@ -175,7 +175,7 @@ function cacto(){
 
 function pontuation(){
   
- count = count + Math.round(FrameRate()/60);
+ count = count + Math.round(frameRate()/60);
 
   
  if(count>0 && frameCount%100 === 0){
