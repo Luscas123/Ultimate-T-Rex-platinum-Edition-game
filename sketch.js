@@ -4,7 +4,7 @@ var nuvens, nuvensImage;
 var aleatorio;
 var cactos, cactosImage1, cactosImage2, cactosImage3, cactosImage4, cactosImage5,cactosImage6;
 var randomNumber;
-var count;
+var count = 0;
 var restart,gameoverSimble, game_Over, restartSimble;
 
 var cactosGrupo, nuvensGrupo;
@@ -13,7 +13,7 @@ var INICIO=0,JOGANDO=1,GAMEOVER=2;
 
 var estadoDeJogo=INICIO;
 
-var aux;
+
 
 var som_jump, som_die, som_checkPoint
 
@@ -106,7 +106,7 @@ function jump(){
     som_jump.play();
     if(estadoDeJogo===INICIO){
       estadoDeJogo=JOGANDO;
-      aux=frameCount;
+      
     }
   }
 
@@ -173,11 +173,7 @@ function cacto(){
 
 
 
-function pontuation(){
-  
- 
- 
-}
+
 
 function inicio(){
  
@@ -208,15 +204,16 @@ function jogando(){
 
   trex.collide(invisibleGround); 
 
-  pontuation()
+  
 
   text ("Pontuação:"+count, 500,50);
-  
-  count = count + Math.round(frameRate()/60);
 
-  if(count>0 && frameCount%100 === 0){
+  count = count+Math.round(frameRate()/60);
+
+  
+  if (count%100===0 && count>0){
     som_checkPoint.play();
- }
+  }
 
   infinityground();
 
@@ -264,6 +261,8 @@ function reset(){
   ground.velocityX=-8;
 
   trex.changeAnimation("running", trex_running);
+
+  count = 0
 
 
 }
